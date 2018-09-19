@@ -1,10 +1,10 @@
-import Home from "./home/home.vue";
+import Inbox from "./mail/inbox.vue";
 
 export default vue => [
 	{
 		path: "",
 		controller: () => {
-			vue.currentView = Home;
+			vue.currentView = Inbox;
 		}
 	}
 ];
