@@ -1,5 +1,7 @@
 <template>
 	<div class="current-view">
+		<Header />
+		<Clearfix />
 		<Sidebar />
 		<div class="content">
 			<component :is="$parent.currentView" ref="currentView"></component>

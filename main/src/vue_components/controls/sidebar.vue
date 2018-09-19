@@ -1,6 +1,5 @@
 <template>
 	<div class="sidebar">
-		<div class="logo">GeniousMail</div>
 	</div>
 </template>
 
@@ -10,14 +9,6 @@
 		height: 100%
 		float: left
 		background-color: #224
-
-	.logo
-		padding: 32px
-		font-family: TextMeOne
-		font-size: 32px
-
-		background-color: #D20
-		color: #FFF
 </style>
 
 <script type="text/javascript">

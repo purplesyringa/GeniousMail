@@ -16,8 +16,11 @@ Vue.component("MessageList", MessageList);
 import Message from "@/vue_components/message-list/message.vue";
 Vue.component("Message", Message);
 
-import Sidebar from "@/vue_components/sidebar/sidebar.vue";
+import Sidebar from "@/vue_components/controls/sidebar.vue";
 Vue.component("Sidebar", Sidebar);
+
+import Header from "@/vue_components/controls/header.vue";
+Vue.component("Header", Header);
 
 import Clearfix from "@/vue_components/clearfix/clearfix.vue";
 Vue.component("Clearfix", Clearfix);
