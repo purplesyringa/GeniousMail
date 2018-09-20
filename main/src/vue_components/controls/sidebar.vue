@@ -1,6 +1,6 @@
 <template>
 	<div class="sidebar">
-		<div class="item current">
+		<div class="item current" @click="open('inbox')">
 			<icon class="item-icon" name="inbox" />
 			Inbox
 		</div>
@@ -20,7 +20,7 @@
 			Sent
 		</div>
 
-		<div class="item">
+		<div class="item" @click="open('all')">
 			<icon class="item-icon" name="envelope" />
 			All
 		</div>
@@ -76,6 +76,11 @@
 	import "vue-awesome/icons/trash";
 
 	export default {
-		name: "Sidebar"
+		name: "Sidebar",
+		methods: {
+			open(name) {
+				this.$router.navigate(name);
+			}
+		}
 	};
 </script>

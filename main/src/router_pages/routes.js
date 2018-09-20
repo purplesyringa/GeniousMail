@@ -6,5 +6,11 @@ export default vue => [
 		controller: () => {
 			vue.currentView = Inbox;
 		}
+	},
+	{
+		path: "inbox",
+		controller: () => {
+			vue.currentView = Inbox;
+		}
 	}
 ];
