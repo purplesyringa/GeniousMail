@@ -13,6 +13,36 @@
 						from: "gitcenter@zeroid.bit",
 						fromNick: "Git Center",
 						id: 0
+					},
+					{
+						subject: "Hello world",
+						from: "gitcenter@zeroid.bit",
+						fromNick: "Git Center",
+						id: 0
+					},
+					{
+						subject: "Hello world",
+						from: "gitcenter@zeroid.bit",
+						fromNick: "Git Center",
+						id: 0
+					},
+					{
+						subject: "Hello world",
+						from: "gitcenter@zeroid.bit",
+						fromNick: "Git Center",
+						id: 0
+					},
+					{
+						subject: "Hello world",
+						from: "gitcenter@zeroid.bit",
+						fromNick: "Git Center",
+						id: 0
+					},
+					{
+						subject: "Hello world",
+						from: "gitcenter@zeroid.bit",
+						fromNick: "Git Center",
+						id: 0
 					}
 				]
 			};

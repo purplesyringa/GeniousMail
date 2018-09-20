@@ -14,6 +14,7 @@
 		padding: 24px 32px
 		transition: 0.5s all
 		cursor: pointer
+		border-bottom: 1px solid #EEE
 
 		&:hover
 			background-color: #F0F0F0

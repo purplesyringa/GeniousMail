@@ -1,15 +1,17 @@
 <template>
-	<MessageList>
-		<Message
-			v-for="message in messages"
-			:key="message.id"
+	<div>
+		<MessageList>
+			<Message
+				v-for="message in messages"
+				:key="message.id"
 
-			:subject="message.subject"
-			:from="message.from"
-			:fromNick="message.fromNick"
-			:id="message.id"
-		/>
-	</MessageList>
+				:subject="message.subject"
+				:from="message.from"
+				:fromNick="message.fromNick"
+				:id="message.id"
+			/>
+		</MessageList>
+	</div>
 </template>
 
 <script type="text/javascript">

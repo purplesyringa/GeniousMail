@@ -7,6 +7,9 @@
 <style lang="sass" scoped>
 	.message-list
 		width: 396px
+		height: 100%
+		overflow-y: auto
+		border-right: 1px solid #EEE
 </style>
 
 <script type="text/javascript">

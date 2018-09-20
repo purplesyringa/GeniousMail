@@ -9,7 +9,6 @@
 <style lang="sass" scoped>
 	.header
 		width: 100%
-		float: left
 		background-color: #224
 
 	.logo
