@@ -1,15 +1,5 @@
 <template>
-	<MessageList>
-		<Message
-			v-for="message in messages"
-			:key="message.id"
-
-			:subject="message.subject"
-			:from="message.from"
-			:fromNick="message.fromNick"
-			:id="message.id"
-		/>
-	</MessageList>
+	<Mailbox :messages="messages" />
 </template>
 
 <script type="text/javascript">
@@ -26,6 +16,9 @@
 					}
 				]
 			};
+		},
+		mounted() {
+			this.$store.commit("openTab", "Inbox");
 		}
 	};
 </script>

@@ -2,7 +2,7 @@
 	<div class="header">
 		<div class="logo">GeniousMail</div>
 
-		<input type="text" placeholder="Search..." class="search">
+		<input type="text" :placeholder="placeholder" class="search">
 	</div>
 </template>
 
@@ -40,6 +40,13 @@
 
 <script type="text/javascript">
 	export default {
-		name: "Header"
+		name: "Header",
+
+		computed: {
+			placeholder() {
+				const tab = this.$store.state.tab;
+				return `Search in ${tab}`;
+			}
+		}
 	};
 </script>

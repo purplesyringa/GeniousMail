@@ -4,9 +4,12 @@ export default vue => [
 	{
 		path: "",
 		controller: () => {
-			vue.currentView = Inbox;
+			setTimeout(() => {
+				vue.$router.navigate("inbox");
+			}, 0);
 		}
 	},
+
 	{
 		path: "inbox",
 		controller: () => {

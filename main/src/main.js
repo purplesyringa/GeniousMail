@@ -10,11 +10,14 @@ Vue.use(AsyncComputed);
 import Icon from "vue-awesome/components/Icon.vue";
 Vue.component("icon", Icon);
 
-import MessageList from "@/vue_components/message-list/message-list.vue";
+import MessageList from "@/vue_components/mailbox/message-list.vue";
 Vue.component("MessageList", MessageList);
 
-import Message from "@/vue_components/message-list/message.vue";
+import Message from "@/vue_components/mailbox/message.vue";
 Vue.component("Message", Message);
+
+import Mailbox from "@/vue_components/mailbox/mailbox.vue";
+Vue.component("Mailbox", Mailbox);
 
 import Sidebar from "@/vue_components/controls/sidebar.vue";
 Vue.component("Sidebar", Sidebar);
@@ -35,11 +38,23 @@ const store = new Vuex.Store({
 			settings: {
 				own: false
 			}
-		}
+		},
+		currentParams: null,
+		currentRoute: null,
+		currentHash: null,
+		tab: ""
 	},
 	mutations: {
 		setSiteInfo(state, siteInfo) {
 			state.siteInfo = siteInfo;
+		},
+		route(state, router) {
+			state.currentParams = router.currentParams;
+			state.currentRoute = router.currentRoute;
+			state.currentHash = router.currentHash;
+		},
+		openTab(state, tab) {
+			state.tab = tab;
 		}
 	}
 });
