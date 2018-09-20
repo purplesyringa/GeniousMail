@@ -8,7 +8,7 @@
 	.message-list
 		width: 396px
 		height: 100%
-		overflow-y: auto
+		overflow-y: scroll
 		border-right: 1px solid #EEE
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="mailbox">
 		<MessageList>
 			<Message
 				v-for="message in messages"
@@ -13,6 +13,11 @@
 		</MessageList>
 	</div>
 </template>
+
+<style lang="sass" scoped>
+	.mailbox
+		height: 100%
+</style>
 
 <script type="text/javascript">
 	export default {
