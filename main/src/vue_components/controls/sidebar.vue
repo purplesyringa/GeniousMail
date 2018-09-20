@@ -1,34 +1,11 @@
 <template>
 	<div class="sidebar">
-		<div class="item current" @click="open('inbox')">
-			<icon class="item-icon" name="inbox" />
-			Inbox
-		</div>
-
-		<div class="item disabled">
-			<icon class="item-icon" name="star" />
-			Marked
-		</div>
-
-		<div class="item disabled">
-			<icon class="item-icon" name="file" />
-			Drafts
-		</div>
-
-		<div class="item disabled">
-			<icon class="item-icon" name="plane" />
-			Sent
-		</div>
-
-		<div class="item" @click="open('all')">
-			<icon class="item-icon" name="envelope" />
-			All
-		</div>
-
-		<div class="item disabled">
-			<icon class="item-icon" name="trash" />
-			Trash
-		</div>
+		<SidebarTab icon="inbox" name="Inbox" />
+		<SidebarTab icon="star" name="Marked" :disabled="true" />
+		<SidebarTab icon="file" name="Drafts" :disabled="true" />
+		<SidebarTab icon="plane" name="Sent" :disabled="true" />
+		<SidebarTab icon="envelope" name="All" :disabled="true" />
+		<SidebarTab icon="trash" name="Trash" :disabled="true" />
 	</div>
 </template>
 
@@ -38,33 +15,6 @@
 		height: 100%
 		float: left
 		background-color: #D20
-
-	.item
-		display: block
-		height: 40px
-		padding: 10px 16px
-		margin: 8px 32px
-
-		background-color: rgba(255, 255, 255, 0.1)
-		border: rgba(255, 255, 255, 0.3) solid 1px
-		border-radius: 8px
-		color: #FFF
-		transition: all 0.2s
-		cursor: pointer
-
-		&:hover
-			background-color: rgba(255, 255, 255, 0.3)
-			transition: none
-
-		&.disabled
-			background-color: rgba(0, 0, 0, 0.1)
-
-		&.current
-			background-color: rgba(255, 255, 0, 0.5)
-
-		.item-icon
-			width: 32px
-			margin-right: 8px
 </style>
 
 <script type="text/javascript">
@@ -75,12 +25,13 @@
 	import "vue-awesome/icons/envelope";
 	import "vue-awesome/icons/trash";
 
+	import SidebarTab from "./sidebar-tab.vue";
+
 	export default {
 		name: "Sidebar",
-		methods: {
-			open(name) {
-				this.$router.navigate(name);
-			}
+
+		components: {
+			SidebarTab
 		}
 	};
 </script>
