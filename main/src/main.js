@@ -16,6 +16,9 @@ Vue.component("MessageList", MessageList);
 import Message from "@/vue_components/mailbox/message.vue";
 Vue.component("Message", Message);
 
+import MessageView from "@/vue_components/mailbox/message-view.vue";
+Vue.component("MessageView", MessageView);
+
 import Mailbox from "@/vue_components/mailbox/mailbox.vue";
 Vue.component("Mailbox", Mailbox);
 

@@ -15,5 +15,11 @@ export default vue => [
 		controller: () => {
 			vue.currentView = Inbox;
 		}
+	},
+	{
+		path: "inbox/message/:message",
+		controller: () => {
+			vue.currentView = Inbox;
+		}
 	}
 ];
