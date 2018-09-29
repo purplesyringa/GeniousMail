@@ -17,7 +17,7 @@ export default vue => [
 		}
 	},
 	{
-		path: "inbox/message/:message",
+		path: "inbox/discussion/:discussion",
 		controller: () => {
 			vue.currentView = Inbox;
 		}

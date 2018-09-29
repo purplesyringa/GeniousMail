@@ -10,14 +10,14 @@ Vue.use(AsyncComputed);
 import Icon from "vue-awesome/components/Icon.vue";
 Vue.component("icon", Icon);
 
-import MessageList from "@/vue_components/mailbox/message-list.vue";
-Vue.component("MessageList", MessageList);
+import DiscussionList from "@/vue_components/mailbox/discussion-list.vue";
+Vue.component("DiscussionList", DiscussionList);
 
-import Message from "@/vue_components/mailbox/message.vue";
-Vue.component("Message", Message);
+import Discussion from "@/vue_components/mailbox/discussion.vue";
+Vue.component("Discussion", Discussion);
 
-import MessageView from "@/vue_components/mailbox/message-view.vue";
-Vue.component("MessageView", MessageView);
+import DiscussionView from "@/vue_components/mailbox/discussion-view.vue";
+Vue.component("DiscussionView", DiscussionView);
 
 import Mailbox from "@/vue_components/mailbox/mailbox.vue";
 Vue.component("Mailbox", Mailbox);

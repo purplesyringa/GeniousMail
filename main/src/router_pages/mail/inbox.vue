@@ -10,39 +10,51 @@
 				messages: [
 					{
 						subject: "Hello world",
-						from: "gitcenter@zeroid.bit",
-						fromNick: "Git Center",
-						id: "0"
+						certUserId: "gitcenter@zeroid.bit",
+						nick: "Git Center",
+						id: "0",
+						discussion: "0",
+						authAddress: "1A"
 					},
 					{
 						subject: "Hello world",
-						from: "gitcenter@zeroid.bit",
-						fromNick: "Git Center",
-						id: "1"
+						certUserId: "gitcenter@zeroid.bit",
+						nick: "Git Center",
+						id: "1",
+						discussion: "0",
+						authAddress: "1B"
 					},
 					{
 						subject: "Hello world",
-						from: "gitcenter@zeroid.bit",
-						fromNick: "Git Center",
-						id: "2"
+						certUserId: "gitcenter@zeroid.bit",
+						nick: "Git Center",
+						id: "2",
+						discussion: "2",
+						authAddress: "1C"
 					},
 					{
 						subject: "Hello world",
-						from: "gitcenter@zeroid.bit",
-						fromNick: "Git Center",
-						id: "3"
+						certUserId: "gitcenter@zeroid.bit",
+						nick: "Git Center",
+						id: "3",
+						discussion: "3",
+						authAddress: "1D"
 					},
 					{
 						subject: "Hello world",
-						from: "gitcenter@zeroid.bit",
-						fromNick: "Git Center",
-						id: "4"
+						certUserId: "gitcenter@zeroid.bit",
+						nick: "Git Center",
+						id: "4",
+						discussion: "0",
+						authAddress: "1E"
 					},
 					{
 						subject: "Hello world",
-						from: "gitcenter@zeroid.bit",
-						fromNick: "Git Center",
-						id: "5"
+						certUserId: "gitcenter@zeroid.bit",
+						nick: "Git Center",
+						id: "5",
+						discussion: "3",
+						authAddress: "1F"
 					}
 				]
 			};
@@ -53,7 +65,7 @@
 
 		computed: {
 			current() {
-				const id = this.$router.currentParams.message;
+				const id = this.$router.currentParams.discussion;
 				if(id === undefined) {
 					return null;
 				} else {

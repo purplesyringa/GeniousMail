@@ -1,24 +1,23 @@
 <template>
 	<div class="mailbox">
-		<MessageList>
-			<Message
-				v-for="message in messages"
-				:key="message.id"
+		<DiscussionList>
+			<Discussion
+				v-for="discussion in discussions"
+				:key="discussion.id"
 
-				:subject="message.subject"
-				:from="message.from"
-				:fromNick="message.fromNick"
-				:id="message.id"
+				:subject="discussion.subject"
+				:participants="discussion.participants"
+				:id="discussion.id"
 
-				:current="message.id === current"
+				:current="discussion.id === current"
 			/>
-		</MessageList>
+		</DiscussionList>
 
-		<div class="message-view" v-if="current">
-			<MessageView v-bind="currentMessage" />
+		<div class="discussion-view" v-if="current">
+			<DiscussionView v-bind="currentDiscussion" />
 		</div>
-		<div class="message-view" v-else>
-			<div class="no-message">
+		<div class="discussion-view" v-else>
+			<div class="no-discussion">
 				No message selected.
 			</div>
 		</div>
@@ -32,10 +31,10 @@
 		width: 100%
 		height: 100%
 
-		.message-view
+		.discussion-view
 			flex: 1
 
-			.no-message
+			.no-discussion
 				display: flex
 				height: 100%
 				justify-content: center
@@ -52,13 +51,77 @@
 		data() {
 			return {
 				messages: [],
+				discussions: [],
 				current: null
 			};
 		},
 
+		mounted() {
+			this.updateDiscussions(this.messages);
+		},
+
+		watch: {
+			messages(messages) {
+				this.updateDiscussions(messages);
+			}
+		},
+
+		methods: {
+			updateDiscussions() {
+				// Notice: we don't use computed property for
+				// discussions; instead we watch messages and change
+				// discussions inside.
+				// This allows us to load some cache before and be
+				// sure some Vue change won't affect the result.
+				this.discussions = [];
+
+				// Sort discussions by their root
+				const discussionsByRoot = {};
+				const messageById = {};
+				const participantsByRoot = {};
+				for(const message of this.messages) {
+					// Add message to discussion
+					if(!discussionsByRoot[message.discussion]) {
+						discussionsByRoot[message.discussion] = [];
+					}
+					discussionsByRoot[message.discussion].push(message);
+
+					// Save message
+					messageById[message.id] = message;
+
+					// Add participant
+					if(!participantsByRoot[message.discussion]) {
+						participantsByRoot[message.discussion] = [];
+					}
+					let participantList = participantsByRoot[message.discussion];
+					if(
+						participantList.findIndex(p => {
+							return p.authAddress === message.authAddress;
+						}) === -1
+					) {
+						participantList.push({
+							nick: message.nick,
+							certUserId: message.certUserId,
+							authAddress: message.authAddress
+						});
+					}
+				}
+
+				// Now to array
+				for(const rootId of Object.keys(discussionsByRoot)) {
+					this.discussions.push({
+						id: rootId,
+						messages: discussionsByRoot[rootId],
+						subject: messageById[rootId].subject,
+						participants: participantsByRoot[rootId]
+					});
+				}
+			}
+		},
+
 		computed: {
-			currentMessage() {
-				return this.messages.find(message => message.id === this.current);
+			currentDiscussion() {
+				return this.discussions.find(discussion => discussion.id === this.current);
 			}
 		}
 	};

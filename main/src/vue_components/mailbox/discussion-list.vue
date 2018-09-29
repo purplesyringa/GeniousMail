@@ -1,11 +1,11 @@
 <template>
-	<div class="message-list">
+	<div class="discussion-list">
 		<slot />
 	</div>
 </template>
 
 <style lang="sass" scoped>
-	.message-list
+	.discussion-list
 		width: 396px
 		height: 100%
 		overflow-y: scroll
@@ -14,6 +14,6 @@
 
 <script type="text/javascript">
 	export default {
-		name: "MessageList"
+		name: "DiscussionList"
 	};
 </script>

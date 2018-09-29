@@ -1,16 +1,18 @@
 <template>
-	<div :class="['message', {current}]" @click="open">
+	<div :class="['discussion', {current}]" @click="open">
 		<h2>{{subject}}</h2>
 		<h3 class="from">
-			From:
-			<span class="username">{{fromNick}}</span>
-			<span class="mail">&lt;{{from}}&gt;</span>
+			<template v-for="participant, i in participants">
+				<span class="username">{{participant.nick}} </span>
+				<span class="mail">&lt;{{participant.certUserId}}&gt;</span>
+				<span class="sep" v-if="i + 1 < participants.length">, </span>
+			</template>
 		</h3>
 	</div>
 </template>
 
 <style lang="sass" scoped>
-	.message
+	.discussion
 		padding: 24px 32px
 		transition: 0.2s all
 		cursor: pointer
@@ -27,10 +29,16 @@
 			font-weight: normal
 
 			&.from
+				font-size: 0
+				> *
+					font-size: 16px
+
 				.username
 					color: #F80
 					font-weight: bold
 				.mail
+					color: #AAA
+				.sep
 					color: #AAA
 
 		&.current
@@ -39,11 +47,10 @@
 
 <script type="text/javascript">
 	export default {
-		name: "Message",
+		name: "Discussion",
 		props: {
 			subject: String,
-			from: String,
-			fromNick: String,
+			participants: Array,
 			id: String,
 			current: Boolean
 		},
@@ -51,7 +58,7 @@
 		methods: {
 			open() {
 				const tab = this.$store.state.tab;
-				this.$router.navigate(`${tab.toLowerCase()}/message/${this.id}`);
+				this.$router.navigate(`${tab.toLowerCase()}/discussion/${this.id}`);
 			}
 		}
 	};
