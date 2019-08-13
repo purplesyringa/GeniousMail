@@ -19,7 +19,7 @@
 		border-bottom: 1px solid #EEE
 
 		&:hover
-			background-color: #FCFCFC
+			background-color: #F8F8F8
 			transition: none
 
 		h2, h3

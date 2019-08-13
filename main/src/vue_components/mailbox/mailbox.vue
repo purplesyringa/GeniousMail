@@ -95,9 +95,7 @@
 					}
 					let participantList = participantsByRoot[message.discussion];
 					if(
-						participantList.findIndex(p => {
-							return p.authAddress === message.authAddress;
-						}) === -1
+						!participantList.some(p => p.authAddress === message.authAddress)
 					) {
 						participantList.push({
 							nick: message.nick,
@@ -111,7 +109,7 @@
 				for(const rootId of Object.keys(discussionsByRoot)) {
 					this.discussions.push({
 						id: rootId,
-						messages: discussionsByRoot[rootId],
+						messages: discussionsByRoot[rootId].sort((a, b) => a.timestamp - b.timestamp),
 						subject: messageById[rootId].subject,
 						participants: participantsByRoot[rootId]
 					});

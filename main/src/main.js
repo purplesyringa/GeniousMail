@@ -19,6 +19,9 @@ Vue.component("Discussion", Discussion);
 import DiscussionView from "@/vue_components/mailbox/discussion-view.vue";
 Vue.component("DiscussionView", DiscussionView);
 
+import MessageView from "@/vue_components/mailbox/message-view.vue";
+Vue.component("MessageView", MessageView);
+
 import Mailbox from "@/vue_components/mailbox/mailbox.vue";
 Vue.component("Mailbox", Mailbox);
 
