@@ -13,7 +13,7 @@
 
 <style lang="sass" scoped>
 	.discussion
-		padding: 24px 32px
+		padding: 16px 24px
 		transition: 0.2s all
 		cursor: pointer
 		border-bottom: 1px solid #EEE

@@ -11,7 +11,7 @@
 
 <style lang="sass" scoped>
 	.sidebar
-		width: 230px
+		width: 182px
 		background-color: #D20
 </style>
 

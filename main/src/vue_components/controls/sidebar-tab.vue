@@ -10,7 +10,7 @@
 		display: block
 		height: 40px
 		padding: 10px 16px
-		margin: 8px 32px
+		margin: 8px 16px
 
 		background-color: rgba(255, 255, 255, 0.1)
 		border: rgba(255, 255, 255, 0.3) solid 1px
@@ -30,7 +30,7 @@
 			background-color: rgba(255, 255, 0, 0.5)
 
 		.item-icon
-			width: 32px
+			width: 24px
 			margin-right: 8px
 </style>
 

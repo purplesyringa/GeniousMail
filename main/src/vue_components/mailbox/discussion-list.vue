@@ -6,7 +6,7 @@
 
 <style lang="sass" scoped>
 	.discussion-list
-		width: 396px
+		width: 364px
 		height: 100%
 		overflow-y: scroll
 		border-right: 1px solid #EEE
