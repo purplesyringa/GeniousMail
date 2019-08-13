@@ -27,9 +27,8 @@
 <style lang="sass" scoped>
 	.mailbox
 		display: flex
-		flex-orientation: row
-		width: 100%
-		height: 100%
+		flex-direction: row
+		flex: 1 1 0
 
 		.discussion-view
 			flex: 1
