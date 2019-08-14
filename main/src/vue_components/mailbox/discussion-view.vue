@@ -2,7 +2,7 @@
 	<div class="discussion-view">
 		<h2>{{subject}}</h2>
 
-		<MessageView v-for="message in messages" v-bind="message" />
+		<MessageView v-for="message in messages" v-bind="message" :key="message.id" />
 	</div>
 </template>
 
