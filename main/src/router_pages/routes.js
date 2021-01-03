@@ -1,4 +1,5 @@
 import Inbox from "./mail/inbox.vue";
+import NewMail from "./mail/new.vue";
 
 export default vue => [
 	{
@@ -20,6 +21,13 @@ export default vue => [
 		path: "inbox/discussion/:discussion",
 		controller: () => {
 			vue.currentView = Inbox;
+		}
+	},
+
+	{
+		path: "new-mail",
+		controller: () => {
+			vue.currentView = NewMail;
 		}
 	}
 ];
